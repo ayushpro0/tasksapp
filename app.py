@@ -42,6 +42,7 @@ def products():
     print(allTodo)
     return 'this is a products page'
 
+
 @app.route('/update/<int:sno>', methods=['GET','POST'])
 def update(sno):
     if request.method=='POST':
@@ -56,6 +57,7 @@ def update(sno):
 
     todo = Todo.query.filter_by(sno = sno).first()
     return render_template('update.html', todo = todo)
+
 
 @app.route('/delete/<int:sno>')
 def delete(sno):
